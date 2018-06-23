@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            >
+            <LinearLayout
+                android:id="@+id/lo_first_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    android:hint="cut No"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="SRN No"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="batch No"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="portion"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_second_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lo_first_row"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="style No"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="fabric"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="colour"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="components"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_tbl_sizes"
+                android:layout_below="@+id/lo_second_row"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="30dip"
+                android:orientation="horizontal"
+                android:weightSum="9">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/custom_border"
+                    android:text="Size"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_border"
+                    android:gravity="center"
+                    android:hint="XS"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:hint="S"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:hint="M"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:hint="L"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:hint="XL"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:hint="XXL"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:hint="XXXL"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_tbl_ratios"
+                android:layout_below="@+id/lo_tbl_sizes"
+                android:layout_width="match_parent"
+                android:paddingTop="5dp"
+                android:layout_height="45dip"
+                android:orientation="horizontal"
+                android:weightSum="9">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/custom_border"
+                    android:text="Ratio"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:inputType="number"
+                    />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:inputType="number"
+                    />
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:inputType="number"
+                    />
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:inputType="number"
+                    />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:inputType="number"
+                    />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:inputType="number"
+                    />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/table_border"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lo_measurement_row"
+                android:layout_below="@+id/lo_tbl_ratios"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Marker Length"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Marker Width"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="No of Garment Reqd"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_measurement_row2"
+                android:layout_below="@+id/lo_measurement_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Garments Per  Ply"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="No of Ply"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Lay Length"/>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/lo_table_second"
+                android:layout_below="@+id/lo_measurement_row2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/table_border"
+                android:padding="5dp">
+                <TableRow>
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Batch N0"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Roll No"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Shade"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Sticker yds"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="No. Layers"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Fabric damage"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="CPI YDS"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Over lap"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Ttl Used"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Roll Shortage"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="fabric balance"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:text="Used for next ply"
+                        android:gravity="center"
+                        android:background="@drawable/table_border"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_weight="1"
+                        android:background="@drawable/table_border"
+                        android:inputType="numberDecimal"
+                        />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <ImageButton
+                android:id="@+id/btn_raw_add"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/lo_table_second"
+                android:text="add">
+
+            </ImageButton>
+
+            <LinearLayout
+                android:id="@+id/lo_last_row"
+                android:layout_below="@+id/btn_raw_add"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="Extra piles"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="extra yard"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lo_last_row2"
+                android:layout_below="@+id/lo_last_row"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="fab layered by"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="fab cut by"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+    </ScrollView>
+
+</FrameLayout>
