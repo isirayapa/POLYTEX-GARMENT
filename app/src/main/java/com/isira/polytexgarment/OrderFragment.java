@@ -5,13 +5,20 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.Toast;
+
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 
 /**
@@ -21,8 +28,9 @@ import android.widget.TableRow;
 public class OrderFragment extends Fragment {
     TableLayout t1;
     Button button;
+    EditText txt_fab_damage_1,edt_txt_cut_no;
     final int sdk = android.os.Build.VERSION.SDK_INT;
-
+    public String cut_val;
 
     public OrderFragment() {
         // Required empty public constructor
@@ -36,12 +44,24 @@ public class OrderFragment extends Fragment {
         // Inflate the layout for this fragment
         t1 = (TableLayout) view.findViewById(R.id.lo_table_second);
         button = (Button) view.findViewById(R.id.btn_raw_add);
+        txt_fab_damage_1 = (EditText) view.findViewById(R.id.txt_fab_damage_1);
+//        Example for data input from edit text
+        edt_txt_cut_no = (EditText) view.findViewById(R.id.edt_txt_cut_no);
+        // data can be retrieved ...cut_val = edt_txt_cut_no.getText().toString();.....
 
+
+        txt_fab_damage_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                init_popup(view);
+
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceType")
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 TableRow tr_head = new TableRow(getContext());
                 tr_head.setId(10);
                 tr_head.setLayoutParams(new TableLayout.LayoutParams(
@@ -50,7 +70,19 @@ public class OrderFragment extends Fragment {
 
                 for (int i=11;i<24;i++){
                     EditText new_box = new EditText(getContext());
+                    String edt_txt_id = "txt_fab_damage_"+i;
                     new_box.setId(i);
+                    if (i==16){
+                        new_box.setFocusable(false);
+                        new_box.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View popview) {
+                                init_popup(popview);
+
+                            }
+                        });
+
+                    }
                     if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
                         new_box.setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.table_border) );
                     } else {
@@ -69,6 +101,24 @@ public class OrderFragment extends Fragment {
 
 
         return view;
+    }
+
+    public void init_popup(View v){
+
+        // inflate the layout of the popup window
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.damage_popup, null);
+
+        // create the popup window
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true; // lets taps outside the popup also dismiss it
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        // show the popup window
+        // which view you pass in doesn't matter, it is only used for the window tolken
+        popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
+
     }
 
 }
