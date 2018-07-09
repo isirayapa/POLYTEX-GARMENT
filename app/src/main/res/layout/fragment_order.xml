@@ -26,7 +26,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:inputType="numberDecimal"
                     android:hint="cut No"/>
 
                 <EditText
@@ -48,10 +47,24 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btn_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:layout_below="@+id/lo_first_row">
+                <Button
+                    android:id="@+id/btn_retrieve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="retrieve"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/lo_second_row"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lo_first_row"
+                android:layout_below="@+id/btn_row"
                 android:orientation="horizontal"
                 android:weightSum="4">
 
@@ -438,6 +451,14 @@
 
             <Button
                 android:id="@+id/btn_raw_add"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/lo_table_second"
+                android:text="add">
+
+            </Button>
+            <Button
+                android:id="@+id/btn_raw_add2"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_below="@+id/lo_table_second"

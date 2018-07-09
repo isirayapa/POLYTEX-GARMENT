@@ -27,7 +27,7 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
  */
 public class OrderFragment extends Fragment {
     TableLayout t1;
-    Button button;
+    Button button,btn_retrieve;
     EditText txt_fab_damage_1,edt_txt_cut_no;
     final int sdk = android.os.Build.VERSION.SDK_INT;
     public String cut_val;
@@ -48,6 +48,16 @@ public class OrderFragment extends Fragment {
 //        Example for data input from edit text
         edt_txt_cut_no = (EditText) view.findViewById(R.id.edt_txt_cut_no);
         // data can be retrieved ...cut_val = edt_txt_cut_no.getText().toString();.....
+
+        btn_retrieve = view.findViewById(R.id.btn_retrieve);
+        btn_retrieve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(getContext(), edt_txt_cut_no.getText(), Toast.LENGTH_SHORT).show();
+                Log.d("TAG123",edt_txt_cut_no.getText().toString());
+
+            }
+        });
 
 
         txt_fab_damage_1.setOnClickListener(new View.OnClickListener() {
